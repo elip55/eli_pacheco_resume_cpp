@@ -58,16 +58,17 @@ void importEDU(){
 }
 
 void importInternships(){
-    string apl_title, sandia_title, apl_action1, apl_action2, apl_action3;
+    string apl_action1, apl_action2, apl_action3;
     internships = "\nINTERNSHIPS AND CAREER EXPERIENCE:\n";
-    sandia_title = "Sandia National Labs - Advanced Materials Laboratory Science, June 2021 - Present";
 
-    apl_title = "Apple - Firmware & Software Engineering, Jan 2021- June 2021";
+    internships.append("Sandia National Labs - Advanced Materials Laboratory Science, June 2021 - Present\n");
+
+    internships.append("Apple - Firmware & Software Engineering, Jan 2021- June 2021\n");
     apl_action1 = "\t- Worked closely with developers to write and adapt tools, in python, to help firmware teams read through logs more efficiently.";
     apl_action2 = "\t- Systematically troubleshot hardware, using proprietary applications, to delve into systems and correct behavior.";
     apl_action3 = "\t- Used Git and GitHub to create, edit, and push local branches to the remote repo.";
     
-    internships.append(sandia_title + "\n" + apl_title + "\n" + apl_action1 + "\n" +  apl_action2 + "\n" + apl_action3 + "\n");
+    internships.append(apl_action1 + "\n" +  apl_action2 + "\n" + apl_action3 + "\n");
 }
 
 void importSkills(){
