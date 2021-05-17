@@ -1,20 +1,32 @@
 
 
+
 // basic file operations
 #include <iostream>
 #include <fstream>
-using namespace std;
+#include <map>
+using namespace std; 
 
+string name, location, pn, email;
 
-void thisfunction(){
-  cout << "This is me remembering that c++ is more difficult than python" << endl;
-
+void write_header(){
+    ofstream header;
+    name = "\tEli Pacheco\n";
+    location = "\tAlbuquerque, NM\n";
+    pn = "\t(505) 321 - 5922\n";
+    email = "\teli.pacheco55@outlook.com\n";
+    header.open("Header.txt");
+    header << name;
+    header << location;
+    header << pn;
+    header << email; 
+    header.close();
 }
-int main () {
-  ofstream myfile;
-  myfile.open ("example.txt");
-  myfile << "This is a practice string" << endl;
-  myfile.close();
-  thisfunction();
-  return 0;
+
+void write_edu(){
+    ofstream edu;
+}
+int main(){
+    write_header();
+    return 0;
 }
