@@ -7,10 +7,18 @@
 #include <map>
 using namespace std; 
 
-string name, location, pn, email;
+string header, name, location, pn, email, education; // global variables 
 
-void write_header(){
-    string header = "";
+void make_header();
+void write_edu();
+
+int main(){
+    make_header();
+    return 0;
+}
+
+
+void make_header(){
     name = "\tEli Pacheco\n";
     location = "\tAlbuquerque, NM\n";
     pn = "\t(505) 321 - 5922\n";
@@ -19,9 +27,4 @@ void write_header(){
 }
 
 void write_edu(){
-    ofstream edu;
-}
-int main(){
-    write_header();
-    return 0;
 }
