@@ -1,2 +1,2 @@
 # eli_pacheco_resume_cpp
-Resume in C++
+This is the resume of Eli Pacheco....in C++!
