@@ -10,7 +10,7 @@
 #include <utility>
 using namespace std; 
 
-string header, education, internships; // global variables 
+string header, education, internships, skillset; // global variables 
 
 void importHeader();
 void importEDU();
@@ -22,10 +22,12 @@ int main(){
     importHeader();
     importEDU();
     importInternships();
+    importSkills();
     resume.open("eli_pacheco_resume.txt");
     resume << header;
     resume << education;
     resume << internships;
+    resume << skillset;
     resume.close();
 
     return 0;
@@ -58,11 +60,13 @@ void importEDU(){
 }
 
 void importInternships(){
-    string apl_action1, apl_action2, apl_action3;
+    string sandia_action1, apl_action1, apl_action2, apl_action3;
     internships = "\nINTERNSHIPS AND CAREER EXPERIENCE:\n";
 
     internships.append("Sandia National Labs - Advanced Materials Laboratory Science, June 2021 - Present\n");
-
+    sandia_action1 = "\t *To be written*\n";
+    internships.append(sandia_action1);
+    
     internships.append("Apple - Firmware & Software Engineering, Jan 2021- June 2021\n");
     apl_action1 = "\t- Worked closely with developers to write and adapt tools, in python, to help firmware teams read through logs more efficiently.";
     apl_action2 = "\t- Systematically troubleshot hardware, using proprietary applications, to delve into systems and correct behavior.";
@@ -72,5 +76,9 @@ void importInternships(){
 }
 
 void importSkills(){
-  // TODO: this 
+    skillset = "\nSKILLS\n--------------\n";
+    string myskills[] = {"Python", "Computer Science", "Git + GitHub", "Regex" , "Operating systems" , "Mathematics" , "C and C++", "MATLAB", "SOLIDWORKS" };
+    list<string> skills (myskills, myskills + sizeof(myskills) / sizeof(string) );
+    for (list<string>::iterator it = skills.begin(); it != skills.end(); it++)
+        skillset.append("\t" + *it + "" + "\n");
 }
