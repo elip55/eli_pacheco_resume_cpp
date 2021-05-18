@@ -1,5 +1,5 @@
 
-
+// THIS FILE IS STILL IN PROGRESS DESPITE THE RESULT BEING THE SAME AS eli_pacheco_resume.py 
 
 // basic file operations
 #include <list>
@@ -12,6 +12,7 @@ using namespace std;
 
 string header, education, internships, pro_experience, skillset; // global variables 
 
+// function prototypes 
 void importHeader();
 void importEDU();
 void importInternships();
@@ -20,11 +21,13 @@ void importSkills();
 
 int main(){
     ofstream resume; 
+    // calling the functions 
     importHeader();
     importEDU();
     importInternships();
     importPro();
     importSkills();
+    // writing the file 
     resume.open("eli_pacheco_resume.txt");
     resume << header;
     resume << education;
@@ -36,6 +39,7 @@ int main(){
     return 0;
 }
 
+// function for header string
 void importHeader(){
     string name, location, pn, email;
     name = "\n\tEli Pacheco\n";
@@ -45,11 +49,12 @@ void importHeader(){
     header.append(name + location + pn + email);
 }
 
+// function for education string 
 void importEDU(){
     education = "EDUCATION:\n";
     map<string, string> schools;
-
-    schools["1 \tUniversity of New Mexico"] = "BS, Computer Science";
+      
+    schools["1 \tUniversity of New Mexico"] = "BS, Computer Science"; // mapping key:value pairs
     schools["3 \t\tCurrent GPA"] = "3.67\n";
     schools["2 \t\tExpected Grad Date"] = "2023";
     schools["4 \tNew Mexico State University"] = "BA, Creative Media";
@@ -62,6 +67,7 @@ void importEDU(){
     }
 }
 
+// function for internship string
 void importInternships(){
     string sandia_action1, apl_action1, apl_action2, apl_action3;
     internships = "\nINTERNSHIPS AND CAREER EXPERIENCE:\n";
@@ -77,6 +83,8 @@ void importInternships(){
     
     internships.append(apl_action1 + "\n" +  apl_action2 + "\n" + apl_action3 + "\n");
 }
+
+// function for professional string
 void importPro(){
     string rtl_action1, rtl_action2, rtl_action3, vzw_action1, vzw_action2, vzw_action3;
     pro_experience = "\nPROFESSIONAL EXPERIENCE\n";
@@ -93,6 +101,8 @@ void importPro(){
     vzw_action3 = "\t\t- Learned proprietary software for tracking products and clients.\n";
     pro_experience.append(vzw_action1 + vzw_action2 + vzw_action3);
 }
+
+// function for skills 
 void importSkills(){
     skillset = "\nSKILLS\n--------------\n";
     string myskills[] = {"Python", "Computer Science", "Git + GitHub", "Regex" , "Operating systems" , "Mathematics" , "C and C++", "MATLAB", "SOLIDWORKS" };
