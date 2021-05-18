@@ -38,7 +38,7 @@ int main(){
 
 void importHeader(){
     string name, location, pn, email;
-    name = "\tEli Pacheco\n";
+    name = "\n\tEli Pacheco\n";
     location = "\tAlbuquerque, NM\n";
     pn = "\t(505) 321 - 5922\n";
     email = "\teli.pacheco55@outlook.com\n\n";
@@ -49,12 +49,12 @@ void importEDU(){
     education = "EDUCATION:\n";
     map<string, string> schools;
 
-    schools["1 University of New Mexico"] = "BS, Computer Science";
-    schools["3 \tCurrent GPA"] = "3.67\n";
-    schools["2 \tExpected Grad Date"] = "2023";
-    schools["4 New Mexico State University"] = "BA, Creative Media";
-    schools["6 \tGPA"] = "3.2";
-    schools["5 \tGraduated"] = "2015";
+    schools["1 \tUniversity of New Mexico"] = "BS, Computer Science";
+    schools["3 \t\tCurrent GPA"] = "3.67\n";
+    schools["2 \t\tExpected Grad Date"] = "2023";
+    schools["4 \tNew Mexico State University"] = "BA, Creative Media";
+    schools["6 \t\tGPA"] = "3.2";
+    schools["5 \t\tGraduated"] = "2015";
     
     map<string, string>:: iterator letsgo;
     for(letsgo=schools.begin(); letsgo!=schools.end(); ++letsgo){
@@ -67,7 +67,7 @@ void importInternships(){
     internships = "\nINTERNSHIPS AND CAREER EXPERIENCE:\n";
 
     internships.append("\tSandia National Labs - Advanced Materials Laboratory Science, June 2021 - Present\n");
-    sandia_action1 = "\t *To be written*\n";
+    sandia_action1 = "\t\t *To be written*\n";
     internships.append(sandia_action1);
     
     internships.append("\n\tApple - Firmware & Software Engineering, Jan 2021- June 2021\n");
